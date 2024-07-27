@@ -30,7 +30,18 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+'''
+내가 만든 Apps
+'''
+CUSTOM_APPS = [
+    "houses.apps.HousesConfig",
+]
+
+'''
+명칭 바꿈
+django가 기본적으로 제공하는 Apps
+'''
+SYSTEM_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+# django가 바라보도록 설정 (관리편하게 하기 위함)
+INSTALLED_APPS = SYSTEM_APPS + CUSTOM_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
