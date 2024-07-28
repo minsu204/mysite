@@ -15,12 +15,6 @@ class HouseAdmin(admin.ModelAdmin):
     단, column 은 model의 property만 된다.
     '''
 
-    fields = (
-        "name",
-        "address",
-        ("price_per_night", "pets_allowed"),
-    )
-
     list_display = (
         "name",
         "price_per_night",
@@ -32,18 +26,3 @@ class HouseAdmin(admin.ModelAdmin):
         "price_per_night",
         "pets_allowed",
     )
-
-    search_fields = (
-        "address",
-    )
-
-    list_display_links = (
-        "name",
-        "address",
-    )
-
-    list_editable = (
-        "pets_allowed",
-    )
-
-    

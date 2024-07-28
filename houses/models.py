@@ -21,7 +21,7 @@ class House(models.Model):
     #############################################
 
     모델을 만들 땐 모델에 대한 설명을 두는게 좋음
-    작업 후 settings.py 에 반드시 이를 바라보라 알려줘야 함.
+    작업 후 settings.py 에 반드시 이를 바라보라고 알려줘야 함.
     """
 
     """ Model Definition for Houses """
@@ -46,3 +46,4 @@ class House(models.Model):
 
     def __str__(self) -> str:
         return self.name
+    
