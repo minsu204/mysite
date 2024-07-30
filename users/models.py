@@ -5,6 +5,19 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 class User(AbstractUser):
 
+    # 성별
+    class GenderChoices(models.TextChoices):
+        MALE = ("male", "Male")
+        FEMALE = ("female", "Female")
+
+    class LanguageChoices(models.TextChoices):
+        KR = ("kr", "Korean")
+        EN = ("en", "English")
+
+    class CurrencyChoices(models.TextChoices):
+        WON = "won", "Korean Won"
+        USD = "usd", "Dollar"
+
     first_name = models.CharField(
         max_length=150,
         editable=False,
@@ -15,6 +28,12 @@ class User(AbstractUser):
         editable=False,
     )
 
+    # null = True와는 다르다!
+    # 아래 코드는 단순히 비어둘 수 있다고 설정하는 것
+    avatar = models.ImageField(
+        blank=True,
+    )
+
     name = models.CharField(
         max_length=150,
         default="",
@@ -22,4 +41,19 @@ class User(AbstractUser):
 
     is_host = models.BooleanField(
         default=False,
+    )
+
+    gender = models.CharField(
+        max_length=10,
+        choices=GenderChoices.choices,
+    )
+
+    language = models.CharField(
+        max_length=2,
+        choices=LanguageChoices.choices,
+    )
+
+    curreny = models.CharField(
+        max_length=5,
+        choices=CurrencyChoices.choices,
     )

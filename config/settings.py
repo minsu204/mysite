@@ -34,7 +34,9 @@ ALLOWED_HOSTS = []
 내가 만든 Apps
 """
 CUSTOM_APPS = [
+    "common.apps.CommonConfig",
     "users.apps.UsersConfig",
+    "rooms.apps.RoomsConfig",
 ]
 
 """
